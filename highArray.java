@@ -56,4 +56,17 @@ class HighArray {
     }
 }
 
+class HighArrayApp {
+    public static void main(String[] args){
+        int maxSize = 100;
+        HighArray arr;
+        arr = new HighArray(maxSize);
+
+        arr.insert(77);
+        arr.insert(99);
+        arr.insert(44);
+
+        arr.display();
+    }
+}
 
