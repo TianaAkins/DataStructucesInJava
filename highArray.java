@@ -79,7 +79,7 @@ class HighArrayApp {
         arr.insert(11);
         arr.insert(00);
         arr.insert(66);
-        arr.insert(33);
+        arr.insert(33); 
 
         //display array contents
         arr.display();
@@ -98,6 +98,12 @@ class HighArrayApp {
 
         //display array after executing methods
         arr.display();
+
+        //execute getMin method
+        if (arr.getMin() == -1)
+            System.out.println("Array is empty");
+        else
+            System.out.println("Minimum Value: " + arr.getMin() );
     }
 }
 
