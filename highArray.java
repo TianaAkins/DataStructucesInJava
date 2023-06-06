@@ -43,6 +43,17 @@ class HighArray {
             System.out.print(a[j] + " ");
         System.out.println("");
     }
+
+    public long getMin(){
+        if (nElems == 0) 
+            return -1;
+
+        long min = a[0];
+        for (int i=1; i<nElems; i++) {
+            if (a[i] < min) min = a[i];
+        }
+        return min;
+    }
 }
 
 
