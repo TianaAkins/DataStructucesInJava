@@ -26,7 +26,7 @@ class HighArray {
         nElems++;
     }
 
-    //delete method that searches value and 'pushes' that element to the end and decrements array size by 1
+    //delete method that searches value to be removed and 'pushes' that element to the end then decrements array size by 1
     public boolean delete(long value){
         int j;
         for(j=0; j<nElems; j++)
@@ -49,7 +49,7 @@ class HighArray {
         System.out.println("");
     }
 
-    //getMin method that will compare each element to the initialized minimum variable and replace that value if the tested element is less than
+    //getMin method will compare each element to the initialized minimum variable and replace that value if the tested element is less than
     public long getMin(){
         if (nElems == 0) 
             return -1;
@@ -80,8 +80,23 @@ class HighArrayApp {
         arr.insert(00);
         arr.insert(66);
         arr.insert(33);
-        
+
         //display array contents
+        arr.display();
+
+        //execute find method and return respected messages 
+        int searchKey = 35;
+        if (arr.find(searchKey) )
+            System.out.println("Found: " + searchKey);
+        else
+            System.out.println("Can't find: " + searchKey);
+
+        //delete 3 items
+        arr.delete(00);
+        arr.delete(55);
+        arr.delete(99);
+
+        //display array after executing methods
         arr.display();
     }
 }
