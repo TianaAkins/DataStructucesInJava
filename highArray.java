@@ -2,11 +2,13 @@ class HighArray {
     private long[] a;
     private int nElems;
 
+    //constructor
     public HighArray(int max){
         a = new long[max];
         nElems = 0;
     }
 
+    //find method that searches for key value
     public boolean find(long searchKey){
         int j;
         for(j=0; j<nElems; j++)
@@ -18,11 +20,13 @@ class HighArray {
             return true;
     }
 
+    //insert method that adds elements to array
     public void insert(long value){
         a[nElems] = value;
         nElems++;
     }
 
+    //delete method that searches value and 'pushes' that element to the end and decrements array size by 1
     public boolean delete(long value){
         int j;
         for(j=0; j<nElems; j++)
@@ -38,12 +42,14 @@ class HighArray {
         }
     }
 
+    //display method will print array 
     public void display(){
         for(int j=0; j<nElems; j++)
             System.out.print(a[j] + " ");
         System.out.println("");
     }
 
+    //getMin method that will compare each element to the initialized minimum variable and replace that value if the tested element is less than
     public long getMin(){
         if (nElems == 0) 
             return -1;
@@ -58,14 +64,24 @@ class HighArray {
 
 class HighArrayApp {
     public static void main(String[] args){
+        //create array derived from HighArray class
         int maxSize = 100;
         HighArray arr;
         arr = new HighArray(maxSize);
 
+        //insert elements into the array
         arr.insert(77);
         arr.insert(99);
         arr.insert(44);
-
+        arr.insert(55);
+        arr.insert(22);
+        arr.insert(88);
+        arr.insert(11);
+        arr.insert(00);
+        arr.insert(66);
+        arr.insert(33);
+        
+        //display array contents
         arr.display();
     }
 }
