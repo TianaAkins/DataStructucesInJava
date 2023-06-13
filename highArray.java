@@ -1,9 +1,9 @@
-class HighArray {
+class highArray {
     private long[] a;
     private int nElems;
 
     //constructor
-    public HighArray(int max){
+    public highArray(int max){
         a = new long[max];
         nElems = 0;
     }
@@ -62,12 +62,12 @@ class HighArray {
     }
 }
 
-class HighArrayApp {
+class highArrayApp {
     public static void main(String[] args){
         //create array derived from HighArray class
         int maxSize = 100;
-        HighArray arr;
-        arr = new HighArray(maxSize);
+        highArray arr;
+        arr = new highArray(maxSize);
 
         //insert elements into the array
         arr.insert(77);
