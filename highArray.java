@@ -69,6 +69,7 @@ class highArrayApp {
         highArray arr;
         arr = new highArray(maxSize);
 
+        arr.display();
         //insert elements into the array
         arr.insert(77);
         arr.insert(99);
