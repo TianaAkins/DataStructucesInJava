@@ -89,6 +89,8 @@ class OrderedApp
       arr.insert(66);
       arr.insert(33);
 
+      arr.display();
+
       int searchKey = 55;            // search for item
       if( arr.find(searchKey) != arr.size() )
          System.out.println("Found " + searchKey);
