@@ -38,27 +38,28 @@ class OrdArray
    public void insert(long value)    // put element into array
       {
       int lowerBound = 0;
-      int upperBound = nElems -1;
-      int center = 0;
+		int upperBound = nElems - 1;
+		int cenElm = 0;
 
-      while(true){
-         center = (lowerBound + upperBound) / 2;
+		while(true) {
 
-         if(center > value)
-            upperBound = center - 1; //its in the lower half
-         else
-            lowerBound = center + 1; // its in the higher half
-         
-         if (upperBound < lowerBound){
-            //found insertion index
-            center = lowerBound;
-            break;
-         }
+			if(lowerBound > upperBound) break; //search and insertion element is found
+			cenElm = (lowerBound + upperBound) / 2; //center element
 
-         
+			if(value > a[cenElm]) {
+				lowerBound = cenElm + 1;
+				cenElm++;
+			}
+			else upperBound = cenElm - 1;
+		}
+
+		for(int k=nElems; k>cenElm; k--) 
+			a[k] = a[k-1];
+
+		a[cenElm] = value;
+		nElems++; 
       } 
-
-      }  // end insert()
+      // end insert()
    //-----------------------------------------------------------
    public boolean delete(long value)
       {
@@ -102,7 +103,6 @@ class OrderedApp
       arr.insert(66);
       arr.insert(33);
 
-      arr.display();
 
       int searchKey = 55;            // search for item
       if( arr.find(searchKey) != arr.size() )
