@@ -1,9 +1,9 @@
-class OrdArray
+class orderedArray
    {
    private long[] a;                 // ref to array a
    private int nElems;               // number of data items
    //-----------------------------------------------------------
-   public OrdArray(int max)          // constructor
+   public orderedArray(int max)          // constructor
       {
       a = new long[max];             // create array
       nElems = 0;
@@ -43,7 +43,7 @@ class OrdArray
 
 		while(true) {
 
-			if(lowerBound > upperBound) break; //search and insertion element is found
+			if(lowerBound > upperBound) break; //insertion element is found
 			cenElm = (lowerBound + upperBound) / 2; //center element
 
 			if(value > a[cenElm]) {
@@ -84,13 +84,13 @@ class OrdArray
    //-----------------------------------------------------------
    }  // end class OrdArray
 ////////////////////////////////////////////////////////////////
-class OrderedApp
+class OrderedArrayApp
    {
    public static void main(String[] args)
       {
       int maxSize = 100;             // array size
-      OrdArray arr;                  // reference to array
-      arr = new OrdArray(maxSize);   // create the array
+      orderedArray arr;                  // reference to array
+      arr = new orderedArray(maxSize);   // create the array
 
       arr.insert(77);                // insert 10 items
       arr.insert(99);
