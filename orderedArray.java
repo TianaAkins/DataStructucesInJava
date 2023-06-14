@@ -37,14 +37,27 @@ class OrdArray
    //-----------------------------------------------------------
    public void insert(long value)    // put element into array
       {
-      int j;
-      for(j=0; j<nElems; j++)        // find where it goes
-         if(a[j] > value)            // (linear search)
+      int lowerBound = 0;
+      int upperBound = nElems -1;
+      int center = 0;
+
+      while(true){
+         center = (lowerBound + upperBound) / 2;
+
+         if(center > value)
+            upperBound = center - 1; //its in the lower half
+         else
+            lowerBound = center + 1; // its in the higher half
+         
+         if (upperBound < lowerBound){
+            //found insertion index
+            center = lowerBound;
             break;
-      for(int k=nElems; k>j; k--)    // move bigger ones up
-         a[k] = a[k-1];
-      a[j] = value;                  // insert it
-      nElems++;                      // increment size
+         }
+
+         
+      } 
+
       }  // end insert()
    //-----------------------------------------------------------
    public boolean delete(long value)
