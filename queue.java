@@ -55,6 +55,22 @@ class Queue
       {
       return nItems;
       }
+   public void display(){
+      if (rear < front && (!isEmpty())) { //if the rear is less than the front the queue has been wrapped around
+         for (int i = front; i < maxSize; i++){
+            System.out.print(queArray[i] + " "); //print queue from front to max size
+         }
+
+         for (int i = 0; i <= rear; i++) {
+            System.out.print(queArray[i]+ " "); //print queue from 0 to rear index
+         }
+      }
+      else if (front <= rear && (!isEmpty())) { //if there is no wrap around
+         for (int i = front; i <= rear; i ++) {
+            System.out.print(queArray[i]);
+         }
+      }
+   }
 //--------------------------------------------------------------
    }  // end class Queue
 ////////////////////////////////////////////////////////////////
@@ -70,7 +86,7 @@ class QueueApp
       theQueue.insert(40);
 
       theQueue.remove();              // remove 3 items
-      theQueue.remove();              //    (10, 20, 30)
+      theQueue.remove();
       theQueue.remove();
 
       theQueue.insert(50);            // insert 4 more items
@@ -78,13 +94,7 @@ class QueueApp
       theQueue.insert(70);
       theQueue.insert(80);
 
-      while( !theQueue.isEmpty() )    // remove and display
-         {                            //    all items
-         long n = theQueue.remove();  // (40, 50, 60, 70, 80)
-         System.out.print(n);
-         System.out.print(" ");
-         }
-      System.out.println("");
+      theQueue.display(); //display items in queue w/ wraparound
       }  // end main()
    }  // end class QueueApp
 ////////////////////////////////////////////////////////////////
