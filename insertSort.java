@@ -25,6 +25,16 @@ class ArrayIns
          System.out.print(a[j] + " ");  // display it
       System.out.println("");
       }
+   public void median(){
+      insertionSort(); //sort the array
+
+      if (nElems % 2 != 0)//if there is a remainder (odd), return the number of elements divided by 2
+         System.out.println("Median: " + a[nElems/2]);
+      else
+         System.out.println("Median: " + (a[nElems/2] + a[(nElems - 1) / 2]) / 2); //if the number of elements in even, add the 2 center elements and take the average
+
+
+   }
 //--------------------------------------------------------------
    public void insertionSort()
       {
@@ -68,6 +78,8 @@ class InsertSortApp
 
       arr.insertionSort();          // insertion-sort them
 
-      arr.display();                // display them again
+      arr.display(); // display them again
+
+      arr.median();
       }  // end main()
    }  // end class InsertSortApp
