@@ -28,10 +28,10 @@ class ArrayIns
    public void median(){
       insertionSort(); //sort the array
 
-      if (nElems % 2 != 0)//if there is a remainder (odd), return the number of elements divided by 2
+      if (nElems % 2 != 0)//if there is a remainder (odd), return the value of the number of elements divided by 2
          System.out.println("Median: " + a[nElems/2]);
       else
-         System.out.println("Median: " + (a[nElems/2] + a[(nElems - 1) / 2]) / 2); //if the number of elements in even, add the 2 center elements and take the average
+         System.out.println("Median: " + (a[nElems/2] + a[(nElems - 1) / 2]) / 2); //if the number of elements is even, add the 2 center values and take the average
 
 
    }
