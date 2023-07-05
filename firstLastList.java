@@ -60,12 +60,12 @@ class FirstLastList
    
    public Link deleteLast() { //assumes list is not empty
       
-      Link current = first;
-      Link previous = null;
+      Link current = first; //reference first link as current position to iterate from
+      Link previous = null; //previous would be 0 or null for starting position 
 
-      while(current.next != null){
-         previous = current;
-         current = current.next;
+      while(current.next != null){ //conduct loop while you are not at the end of the list
+         previous = current; //setting previous to current value
+         current = current.next; //set next value 
       }
       previous.next = null; //will break the link list
       return current;
