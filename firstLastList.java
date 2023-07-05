@@ -58,8 +58,17 @@ class FirstLastList
       return temp;
       }
    
-   public long deleteLast() {
+   public Link deleteLast() { //assumes list is not empty
       
+      Link current = first;
+      Link previous = null;
+
+      while(current.next != null){
+         previous = current;
+         current = current.next;
+      }
+      previous.next = null; //will break the link list
+      return current;
    }
    
 // -------------------------------------------------------------
@@ -97,6 +106,10 @@ class FirstLastApp
       theList.deleteFirst();
 
       theList.displayList();         // display again
+      
+      theList.deleteLast();          //delete last link
+ 
+      theList.displayList();       //display again
       }  // end main()
    }  // end class FirstLastApp
 ////////////////////////////////////////////////////////////////
