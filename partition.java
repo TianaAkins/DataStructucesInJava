@@ -34,6 +34,11 @@ class ArrayPar
        {
        int leftPtr = left - 1;           // right of first elem
        int rightPtr = right + 1;         // left of pivot
+       if(rightPtr - leftPtr <= 0) { //checking to see if array is large enough to sort
+         return -1;
+       }
+       pivot = theArray[right];   //set pivot to furthest right element
+
        while(true)
           {
           while(leftPtr < right &&       // find bigger item
@@ -48,6 +53,7 @@ class ArrayPar
           else                           // not crossed, so
              swap(leftPtr, rightPtr);    //    swap elements
           }  // end while(true)
+       swap(leftPtr, right); //set pivot
        return leftPtr;                   // return partition
        }  // end partitionIt()
 //--------------------------------------------------------------
