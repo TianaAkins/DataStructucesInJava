@@ -11,3 +11,5 @@ Assignment 3: add median() method to insertSort java program in Listing 3.3 Page
 Assignment 4: add a deleteLast() method for FirstLastList java program Listing 5.3 Page 223
 
 Assignemt 5: write a recursive method that performs multiplication of x and y by adding x to itself y times. modify partionIt() method Listing 7.2 Page 352 to always use the highest-index (right element) as the pivot. 
+
+Assignment 7: modify Listing 11.1 Page 560 to use quadtratic probing. 
