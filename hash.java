@@ -51,12 +51,14 @@ class HashTable
       {
       int key = item.getKey();      // extract key
       int hashVal = hashFunc(key);  // hash the key
+      int k = 1; //for quadratic step
                                     // until empty cell or -1,
       while(hashArray[hashVal] != null &&
                       hashArray[hashVal].getKey() != -1)
+         //insert using quadratic probing
          {
-         ++hashVal;                 // go to next cell
-         hashVal %= arraySize;      // wraparound if necessary
+            hashVal = (hashVal + k*k) % arraySize;
+            k++;
          }
       hashArray[hashVal] = item;    // insert item
       }  // end insert()
