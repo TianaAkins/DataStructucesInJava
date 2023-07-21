@@ -66,6 +66,7 @@ class HashTable
    public DataItem delete(int key)  // delete a DataItem
       {
       int hashVal = hashFunc(key);  // hash the key
+      int k = 1; //for quadratic step
 
       while(hashArray[hashVal] != null)  // until empty cell,
          {                               // found the key?
@@ -75,8 +76,9 @@ class HashTable
             hashArray[hashVal] = nonItem;       // delete item
             return temp;                        // return item
             }
-         ++hashVal;                 // go to next cell
-         hashVal %= arraySize;      // wraparound if necessary
+         //delete using quadratic probing
+         hashVal = (hashVal + k*k) % arraySize;
+         k++;
          }
       return null;                  // can't find item
       }  // end delete()
@@ -84,13 +86,15 @@ class HashTable
    public DataItem find(int key)    // find item with key
       {
       int hashVal = hashFunc(key);  // hash the key
+      int k = 1; //for quatratic step
 
       while(hashArray[hashVal] != null)  // until empty cell,
          {                               // found the key?
          if(hashArray[hashVal].getKey() == key)
             return hashArray[hashVal];   // yes, return item
-         ++hashVal;                 // go to next cell
-         hashVal %= arraySize;      // wraparound if necessary
+         //find key using quadratic probing
+         hashVal = (hashVal + k*k) % arraySize;
+         k++;
          }
       return null;                  // can't find item
       }
